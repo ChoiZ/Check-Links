@@ -8,4 +8,6 @@ Check errors 404 thanks to casperjs
 
 == Usage ==
 
-    casperjs test 404checker.js --includes=URI.js
+    casperjs test 404checker.js --includes=URI.js --url=http://localhost:4000
+
+Change the `url` param by the url you want to check.
