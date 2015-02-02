@@ -1,13 +1,12 @@
 /**
- * This casper unit test script checks for 404 internal links for a given root url.
+ * This casper unit test script checks for: 404 and 500 on internal links for a given url.
  *
  * Author: n1k0, jnankin, ChoiZ
  *
  * Adapted from: https://gist.github.com/n1k0/4509789
  * And Re-adapted from: https://gist.github.com/jnankin/66829583bbcd9d16bb61
- * Usage:
  *
- *     $ casperjs test 404checker.js --includes=URI.js --url=http://localhost:4000
+ * https://github.com/ChoiZ/Check-Links
  */
 
 var url = casper.cli.get("url");
@@ -45,8 +44,8 @@ function crawl(link) {
         checked.push(link);
     });
     this.then(function() {
-        test.assertNotEquals(this.currentHTTPStatus, 404, link + ' is missing (HTTP 404)');
-        test.assertNotEquals(this.currentHTTPStatus, 500, link + ' is broken (HTTP 500)');
+        test.assertNotEquals(this.currentHTTPStatus, 404, link + ' isn\'t missing (HTTP 404)');
+        test.assertNotEquals(this.currentHTTPStatus, 500, link + ' isn\'t broken (HTTP 500)');
 
         if (this.currentHTTPStatus === 404) {
             casper.log(link + ' is missing (HTTP 404)', 'warn');

@@ -1,5 +1,5 @@
-# check_404
-Check errors 404 thanks to casperjs
+# check-links
+Check a page links (error 404, 500) thanks to casperjs
 
 == Requirements ==
 
@@ -8,6 +8,6 @@ Check errors 404 thanks to casperjs
 
 == Usage ==
 
-    casperjs test 404checker.js --includes=URI.js --url=http://localhost:4000
+    casperjs test check-links.js --includes=URI.js --url=http://localhost:4000
 
 Change the `url` param by the url you want to check.
