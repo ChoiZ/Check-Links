@@ -1,12 +1,12 @@
 # check-links
 Check a page links (error 404, 500) thanks to casperjs
 
-== Requirements ==
+## Requirements
 
 * casperjs
 * PhantomJS or SlimerJS
 
-== Usage ==
+## Usage
 
     casperjs test check-links.js --includes=URI.js --url=http://localhost:4000
 
